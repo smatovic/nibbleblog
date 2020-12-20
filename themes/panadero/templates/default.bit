@@ -34,12 +34,6 @@
 	<!-- FAVICON -->
 	<link rel="shortcut icon" href="<?php echo HTML_THEME_CSS.'img/favicon.ico' ?>" type="image/x-icon" />
 
-	<!-- JQUERY -->
-	<script src="<?php echo JS_JQUERY ?>"></script>
-
-	<!-- FitVids -->
-	<script src="<?php echo HTML_THEME_JS.'jquery.fitvids.min.js' ?>"></script>
-
 	<!-- ATOM Feed 2.0 -->
 	<link rel="alternate" type="application/atom+xml" title="ATOM Feed" href="<?php echo $layout['feed'] ?>" />
 
@@ -100,13 +94,6 @@
 		</footer>
 
 	</div>
-
-	<!-- FitVids -->
-	<script>
-	$(document).ready(function(){
-		$("p.fitvids").fitVids();
-	});
-	</script>
 
 </body>
 </html>
