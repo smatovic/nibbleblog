@@ -4,7 +4,7 @@ $theme = array
 (
 	'name'=>'Medium',
 	'description'=>'Insipire on Medium.com. Default cover by Philipp Reiner.',
-	'notes'=>'Disqus and Facebook commments supported',
+	'notes'=>'',
 	'author'=>'Diego Najar',
 	'version'=>'4.0',
 	'last_update'=>'08/02/2014', // dd/mm/yyyy

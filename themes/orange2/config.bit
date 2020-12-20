@@ -4,7 +4,7 @@ $theme = array
 (
 	'name'=>'Orange2',
 	'description'=>'Clean and Fast theme for Nibbleblog',
-	'notes'=>'Disqus and Facebook commments supported',
+	'notes'=>'',
 	'author'=>'Diego Najar',
 	'version'=>'4.0',
 	'last_update'=>'24/01/2014', // dd/mm/yyyy

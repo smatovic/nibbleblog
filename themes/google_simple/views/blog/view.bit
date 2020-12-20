@@ -7,9 +7,6 @@ if(empty($posts))
 }
 else
 {
-	include('includes/disqus_comments.bit');
-	include('includes/facebook_comments.bit');
-
 	// Print each post
 	foreach($posts as $post)
 	{

@@ -12,21 +12,8 @@ echo '<ul class="info">';
 	// Comments
 	if($post['allow_comments'])
 	{
-		if( !empty($theme['disqus_account']))
-		{
-			// Disqus comments
-			echo '<li><a href="'.$post['permalink'].'#disqus_thread"></a></li>';
-		}
-		elseif( !empty($theme['facebook_appId']) )
-		{
-			// Facebook comments
-			echo '<li><a href="'.$post['permalink'].'#comment_form">'.$_LANG['COMMENTS'].' (<fb:comments-count href="'.$settings['url'].$post['permalink'].'"></fb:comments-count>)</a></li>';
-		}
-		else
-		{
-			// Nibbleblog comments
-			echo '<li><a href="'.$post['permalink'].'#comment_form">'.$_LANG['COMMENTS'].' ('.count($post['comments']).')</a></li>';
-		}
+		// Nibbleblog comments
+		echo '<li><a href="'.$post['permalink'].'#comment_form">'.$_LANG['COMMENTS'].' ('.count($post['comments']).')</a></li>';
 	}
 
 echo '</ul>';

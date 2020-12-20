@@ -4,7 +4,7 @@ $theme = array
 (
     'name'=>'Techie',
     'description'=>'A dark theme inspired by Gaia interface from Firefox OS',
-    'notes'=>'Disqus and Facebook comments support, custom navigation bar, social buttons and license placeholder configurable in config.bit',
+    'notes'=>'Custom navigation bar, social buttons and license placeholder configurable in config.bit',
     'author'=>'Rafael Medina García',
     'version'=>'0.2.1',
     'last_update'=>'01/04/2014',

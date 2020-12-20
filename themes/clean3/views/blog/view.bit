@@ -1,15 +1,5 @@
 <?php
 
-// Disqus and Facebook comments
-if( $Comment->disqus_enabled() )
-{
-	include('disqus_comments.bit');
-}
-elseif( $Comment->facebook_enabled() )
-{
-	include('facebook_comments.bit');
-}
-
 // There are no posts
 if(empty($posts))
 {

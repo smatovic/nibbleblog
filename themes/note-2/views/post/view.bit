@@ -22,7 +22,5 @@ if(isset($plugins_by_name['about'])){
 // If post allow comments
 if(Post::allow_comments())
 {
-	// Disqus comments
-	include('disqus_comments.bit');
 }
 ?>

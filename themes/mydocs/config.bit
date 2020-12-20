@@ -4,7 +4,7 @@ $theme = array
 (
 	'name'=>'Mydocs',
 	'description'=>'Official Nibbleblog theme',
-	'notes'=>'Disqus and Facebook commments supported',
+	'notes'=>'',
 	'author'=>'Diego Najar',
 	'version'=>'3.8',
 	'last_update'=>'10/06/2013', // dd/mm/yyyy
