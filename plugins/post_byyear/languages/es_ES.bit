@@ -1,0 +1,8 @@
+<?php
+
+$_PLUGIN_CONFIG['LANG'] = array(
+	'NAME'=>'Posts by year',
+	'DESCRIPTION'=>'Shows posts filtered by year.'
+);
+
+?>

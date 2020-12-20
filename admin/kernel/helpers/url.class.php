@@ -43,6 +43,22 @@ class Url {
 		}
 	}
 
+	public static function year($year, $absolute=false)
+	{
+		global $settings;
+
+		$url = $absolute?BLOG_URL:HTML_PATH_ROOT;
+
+		if($settings['friendly_urls'])
+		{
+			return $url.'year/'.$year.'/';
+		}
+		else
+		{
+			return $url.'index.php?controller=blog&amp;action=view&amp;year='.$year;
+		}
+	}
+
 	public static function post($post, $absolute=false)
 	{
 		global $settings;

@@ -117,6 +117,17 @@ elseif($url['tag']!==null)
 		$page_not_found = true;
 	}
 }
+// ---- POSTS FILTER BY YEAR
+elseif($url['year']!==null)
+{
+	// Get IDs posts by year
+	$posts = $_DB_POST->get_all_posts_by_year($url['year']);
+
+	if($posts==false)
+	{
+		$page_not_found = true;
+	}
+}
 // ---- PARTICULAR POST
 elseif( ($url['id_post']!==null) || ($url['post']!==null) )
 {

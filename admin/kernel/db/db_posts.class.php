@@ -303,6 +303,53 @@ class DB_POSTS {
 		}
 
 		/*
+		 * Return an array with published posts filter by year
+		 *
+		 * parameters:
+		 *  $args = year
+		 *
+		 */
+		public function get_all_posts_by_year($year)
+		{
+			$post_array = array();
+			$tmp_array = array();
+
+			$post_array = $this->get_all();
+
+			$time_from = mktime(00, 0, 1, 1, 1, $year);
+			$time_to = mktime(23, 59, 59, 12, 1, $year);
+
+
+			foreach($post_array as $post)
+			{
+				if ($post['pub_date_unix']>$time_from&&$post['pub_date_unix']<$time_to)
+					array_push($tmp_array, $post);
+			}
+			return $tmp_array;
+		}
+
+		/*
+		 * Return an array with years of published posts
+		 *
+		 */
+		public function get_years()
+		{
+			$years_array = array();
+
+			$post_array = $this->get_all();
+
+			foreach($post_array as $post)
+			{
+				$year = gmdate("Y", $post['pub_date_unix']);
+				array_push($years_array, $year);
+			}
+
+			$years_array = array_map("unserialize", array_unique(array_map("serialize", $years_array)));
+
+			return $years_array;
+		}
+
+		/*
 		 * Return an array with published posts filter by page and amount
 		 *
 		 * parameters:
@@ -694,22 +741,21 @@ class DB_POSTS {
 
 			foreach($this->files as $file)
 			{
-			$post = $this->get_items($file);
+				$post = $this->get_items($file);
 
-			$position = $post['position'];
-
-			while(isset($tmp_array[$position]))
-				$position++;
+//				$position = $post['position'];
+				$position = 0;
+				while(isset($tmp_array[$position]))
+					$position++;
 
 				$tmp_array[$position] = $post;
 			}
-
 			// Sort low to high
 			ksort($tmp_array);
 
 			return $tmp_array;
 		}
-
+	
 } // END Class
 
 ?>

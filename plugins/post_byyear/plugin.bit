@@ -1,0 +1,30 @@
+<?php
+
+$_PLUGIN_CONFIG['DATA'] = array(
+	'author'=>'Srdja Matovic',
+	'version'=>'0.1',
+	'url'=>'https://github.com/smatovic'
+);
+
+class PLUGIN_POST_BYYEAR extends Plugin
+{
+	public function blog_body()
+	{
+		global $_DB_POST;
+
+		// Get all years
+		$years = $_DB_POST->get_years();
+
+		$html = '';
+
+		foreach($years as $year)
+		{
+			$html .= '<a class="postsbyyear" href="'.Url::year($year).'">'.$year.'</a><br>';
+		}
+
+
+		return $html;
+  }
+}
+
+?>
