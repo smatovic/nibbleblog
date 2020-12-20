@@ -1,0 +1,9 @@
+<?php
+
+// Post template
+include('post.bit');
+
+// Nibbleblog comments
+include('nibbleblog_comments.bit');
+
+?>

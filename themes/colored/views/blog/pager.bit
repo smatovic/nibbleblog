@@ -1,0 +1,19 @@
+<section id="pager">
+	<?php echo Pager::home_link() ?>
+
+	<span class="pager-top"> - </span>
+
+	<a class="pager-top" href="#">Top</a>
+</section>
+
+<section id="pager">
+	<?php echo Pager::prev_link() ?>
+
+	<?php echo Pager::next_link() ?>
+</section>
+<p>
+<section id="pager">
+  <center>
+  	<?php echo Pager::all_pages() ?>
+  </center>
+</section>

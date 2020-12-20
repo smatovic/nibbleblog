@@ -1,0 +1,32 @@
+<article class="post">
+
+	<header>
+		<div class="post-published"><?php echo Post::published() ?></div>
+		<h2 class="post-title">
+			<a href="<?php echo Post::permalink() ?>"><?php echo Post::title() ?></a>
+		</h2>
+	</header>
+
+	<div class="post-content">
+		<?php echo Post::content(true) ?>
+	</div>
+
+	<div class="share_wrap">
+		<span class="share">
+			<a target="_blank" href="<?php echo Post::tweet_link(Post::title()) ?>">Twitter</a>
+		</span>
+
+		<span class="share">
+			<a target="_blank" href="<?php echo Post::facebook(Post::title()) ?>">Facebook</a>
+		</span>
+
+		<span class="share">
+			<a target="_blank" href="<?php echo Post::googleplus(Post::title()) ?>">Google+</a>
+		</span>
+
+		<span class="share">
+			<a target="_blank" href="<?php echo Post::linkedin(Post::title(), Post::description()) ?>">Linkedin</a>
+		</span>
+	</div>
+
+</article>

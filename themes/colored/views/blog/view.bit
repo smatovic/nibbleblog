@@ -1,0 +1,21 @@
+<?php
+
+// There are no posts
+if(empty($posts))
+{
+	echo '<p>'.$Language->get('there are no posts').'</p>';
+}
+else
+{
+	// Print each post
+	foreach($posts as $post)
+	{
+		// Include the post template for each post
+		include('post.bit');
+	}
+}
+
+// Blog pager
+include('pager.bit');
+
+?>

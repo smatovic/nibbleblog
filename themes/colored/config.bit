@@ -1,0 +1,16 @@
+<?php
+
+$theme = array
+(
+	'name'=>'Colored',
+	'description'=>'Nibbleblog theme based on simpler',
+	'notes'=>'Plugin post by year and pages for older post activated',
+	'author'=>'Srdja Matovic',
+	'version'=>'1.0',
+	'last_update'=>'20/12/2020', // dd/mm/yyyy
+	'url'=>'https://github.com/smatovic', // http://xxxxxxxxxxxxx
+	'template'=>array('blog'=>'default.bit', 'post'=>'default.bit', 'page'=>'default.bit'),
+	'version_supported'=>array('4.0','4.0.1') // Nibbleblog version supported
+);
+
+?>
