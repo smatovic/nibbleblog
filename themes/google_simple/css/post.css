@@ -155,11 +155,6 @@ POST :: Comments
 	display: block;
 }
 
-#comment_list	img.avatar {
-	float:left;
-	margin-right: 10px;
-}
-
 /*
 ========================================================================
 POST :: Comments form

@@ -301,11 +301,6 @@ article.post  footer.tag_container  div.tag_list  a {
     display: block;
 }
 
-#comment_list  img.avatar {
-    float:left;
-    margin-right: 10px;
-}
-
 /* -------------------- */
 /*     COMMENT FORM     */
 /* -------------------- */
