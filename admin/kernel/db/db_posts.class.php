@@ -743,8 +743,11 @@ class DB_POSTS {
 			{
 				$post = $this->get_items($file);
 
-//				$position = $post['position'];
-				$position = 0;
+				if (!isset($post['position']))
+					$position = 0;
+				else
+					$position = $post['position'];
+
 				while(isset($tmp_array[$position]))
 					$position++;
 
