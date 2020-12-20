@@ -1,11 +1,3 @@
-<?php
-
-// If Facebook comments and Disqus are disabled then enabled Nibbleblog comments
-if( !$Comment->disqus_enabled() && !$Comment->facebook_enabled() )
-{
-
-?>
-
 <section id="comments">
 
 	<div id="comment_list">
@@ -54,9 +46,3 @@ if( !$Comment->disqus_enabled() && !$Comment->facebook_enabled() )
 	</div>
 
 </section>
-
-<?php
-
-}
-
-?>
