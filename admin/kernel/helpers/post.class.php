@@ -128,12 +128,14 @@ class Post {
 
 	// DEPRECATED
 	// Last version available 4.0.3
-	public static function tweet_link()
+	public static function tweet_link($text=false)
 	{
 		global $post;
 
+		$text = $text===false?'':$text;
+
 		$url = Url::post($post, true);
-		return 'https://twitter.com/share?url='.urlencode($url);
+		return 'https://twitter.com/intent/tweet?url='.urlencode($url).'&text='.urlencode($text);
 	}
 
 	public static function twitter($text=false)
@@ -153,7 +155,7 @@ class Post {
 		$text = $text===false?'':$text;
 
 		$url = Url::post($post, true);
-		return 'https://www.facebook.com/sharer/sharer.php?u='.urlencode($text.' '.$url);
+		return 'https://www.facebook.com/sharer/sharer.php?u='.urlencode($url).'&t='.urlencode($text);
 	}
 
 	public static function linkedin($title=false, $text=false)
@@ -164,7 +166,7 @@ class Post {
 		$text = $text===false?'':$text;
 
 		$url = Url::post($post, true);
-		return 'http://www.linkedin.com/shareArticle?mini=true&url='.urlencode($url).'&title='.urlencode($title).'&summary='.urlencode($text);
+		return 'http://www.linkedin.com/shareArticle?mini=true&url='.urlencode($url).'&title='.urlencode($title);
 	}
 
 	public static function googleplus($text=false)
@@ -174,7 +176,7 @@ class Post {
 		$text = $text===false?'':$text;
 
 		$url = str_replace('&amp;', '&', Url::post($post, true));
-		return 'https://plus.google.com/share?url='.urlencode($text.' '.$url);
+		return 'https://plus.google.com/share?url='.urlencode($url);
 	}
 
 	public static function mailto($text=false)
