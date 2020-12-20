@@ -499,7 +499,7 @@ PRIVATE METHODS
 	private function get_items($file)
 	{
 		$content = file_get_contents(PATH_PAGES.$file);
-		$new_obj = new NBXML($content, 0, FALSE);
+		$xml = new NBXML($content, 0, FALSE);
 
 		$file_info = explode('.', $file);
 
