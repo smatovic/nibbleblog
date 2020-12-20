@@ -68,7 +68,7 @@ class Pager {
 		if(!$pager['show_newer'])
 			return false;
 
-		$text = isset($text)?$text:$Language->get('NEWER_POSTS').' →';
+		$text = '← '.(isset($text)?$text:$Language->get('NEWER_POSTS'));
 
 		$html = '<a class="next-page" href="'.$pager['href_newer'].'">'.$text.'</a>';
 
@@ -83,7 +83,7 @@ class Pager {
 		if(!$pager['show_older'])
 			return false;
 
-		$text = isset($text)?$text:'← '.$Language->get('OLDER_POSTS');
+		$text = isset($text)?$text:$Language->get('OLDER_POSTS').' →';
 
 		$html = '<a class="prev-page" href="'.$pager['href_older'].'">'.$text.'</a>';
 
