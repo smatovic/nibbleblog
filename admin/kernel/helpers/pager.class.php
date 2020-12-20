@@ -102,6 +102,25 @@ class Pager {
 		return $html;
 	}
 
+	public static function all_pages()
+	{
+		global $pager;
+		global $url;
+		global $Language;
+
+		$html = '';
+
+		if (!isset($url['tag'])&&!isset($url['categories'])&&!isset($url['year']))
+		{
+			$html.='<span class="all-pages-page">Pages</span><br>';
+
+			for($i=0;$i<=$pager['num_pages'];$i++)
+				$html .= '<a class="all-pages" href="'.$pager['href_prelink'].$i.'">-'.$i.'-</a>';
+		}
+
+		return $html;
+	}
+
 }
 
 ?>

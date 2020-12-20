@@ -21,11 +21,14 @@ if($settings['friendly_urls'])
 	{
 		$href_older = HTML_PATH_ROOT.'category/'.$url['category'].'/page-'.$pager_next;
 		$href_newer = HTML_PATH_ROOT.'category/'.$url['category'].'/page-'.$pager_prev;
+		$href_prelink = HTML_PATH_ROOT.'category/'.$url['category'].'/page-';
+
 	}
 	else
 	{
 		$href_older = HTML_PATH_ROOT.'page-'.$pager_next;
 		$href_newer = HTML_PATH_ROOT.'page-'.$pager_prev;
+		$href_prelink = HTML_PATH_ROOT.'page-';
 	}
 }
 else
@@ -34,11 +37,13 @@ else
 	{
 		$href_older = HTML_PATH_ROOT.'index.php?controller=blog&action=view&category='.$url['category'].'&number='.$pager_next;
 		$href_newer = HTML_PATH_ROOT.'index.php?controller=blog&action=view&category='.$url['category'].'&number='.$pager_prev;
+		$href_prelink = HTML_PATH_ROOT.'index.php?controller=blog&action=view&category='.$url['category'].'&number=';
 	}
 	else
 	{
 		$href_older = HTML_PATH_ROOT.'index.php?controller=blog&action=view&number='.$pager_next;
 		$href_newer = HTML_PATH_ROOT.'index.php?controller=blog&action=view&number='.$pager_prev;
+		$href_prelink = HTML_PATH_ROOT.'index.php?controller=blog&action=view&number=';
 	}
 }
 
@@ -48,12 +53,20 @@ $num_pages = (int) ceil($num_posts / $settings['items_page']) - 1;
 $show_older = $num_pages > $url['number'];
 $show_newer = $url['number'] > 0;
 
+// quick n dirty hack for posts by year
+if($url['year']!=null)
+{
+  $show_older = false;
+  $show_newer = false;
+}
+
 $pager = array(
 	'next'=>$pager_next,		// (int) Next integer page
 	'prev'=>$pager_prev,		// (int) Previus integer page
 	'current'=>$url['number'],	// (int) Current integer page
 	'href_older'=>$href_older,	// (string) Link to older posts
 	'href_newer'=>$href_newer,	// (string) Link to newers posts
+	'href_prelink' => $href_prelink, // prelink
 	'show_older'=>$show_older,	// (Boolean) If there more older posts to show
 	'show_newer'=>$show_newer,	// (Boolean) If there more newers posts to show
 	'num_posts'=>$num_posts,	// (int) Number of posts
