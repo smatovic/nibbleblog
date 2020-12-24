@@ -34,14 +34,14 @@ echo Html::form_open( array('id'=>'js_form', 'name'=>'form', 'method'=>'post') )
 		// POSTS PER PAGE
 		echo Html::div_open( array('class'=>'form_block') );
 			echo Html::label( array('content'=>$_LANG['POSTS_PER_PAGE'], 'class'=>'blocked') );
-			echo Html::select( array('name'=>'items_page'), $items_html, $settings['items_page']);
+			echo Html::selectbyval( array('name'=>'items_page'), $items_html, $settings['items_page']);
 			echo Html::div( array('content'=>$_LANG['AMOUNT_OF_POSTS_THAT_YOU_WISH_TO_SEE_PER_PAGE'], 'class'=>'input_tip') );
 		echo Html::div_close();
 
 		// RSS ITEMS
 		echo Html::div_open( array('class'=>'form_block') );
 			echo Html::label( array('content'=>$_LANG['RSS_ITEMS'], 'class'=>'blocked') );
-			echo Html::select( array('name'=>'items_rss'), $items_html, $settings['items_rss']);
+			echo Html::selectbyval( array('name'=>'items_rss'), $items_html, $settings['items_rss']);
 			echo Html::div( array('content'=>$_LANG['AMOUNT_OF_POSTS_THAT_YOU_WISH_TO_SEE_ON_RSS'], 'class'=>'input_tip') );
 		echo Html::div_close();
 

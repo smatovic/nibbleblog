@@ -168,6 +168,25 @@ class Html {
 		return( $tmp );
 	}
 
+	public static function selectbyval($array = array(), $options = array(), $selected)
+	{
+		$attributes = self::get_attributes($array);
+
+		$tmp = '<select '.$attributes.'>';
+		foreach( $options as $key=>$value )
+		{
+			if( $value == $selected)
+				$attr = 'selected="selected"';
+			else
+				$attr = '';
+
+			$tmp .= '<option value="'.$value.'" '.$attr.'>'.$value.'</option>';
+		}
+		$tmp .= '</select>';
+
+		return( $tmp );
+	}
+
 	public static function div($array = array())
 	{
 		$attributes = self::get_attributes($array);
