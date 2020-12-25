@@ -34,8 +34,9 @@
 
 			<input type="text" name="author_name" value="<?php echo $Comment->form('author_name') ?>" placeholder="<?php echo $Language->get('Name') ?>">
 
+<!--
 			<input type="text" name="author_email" value="<?php echo $Comment->form('author_email') ?>" placeholder="<?php echo $Language->get('Email') ?>">
-
+-->
 			<textarea name="content" placeholder="<?php echo $Language->get('Type the comment here') ?>"><?php echo $Comment->form('content') ?></textarea>
 
 			<input type="submit" value="<?php echo $Language->get('Publish') ?>">
