@@ -79,8 +79,8 @@ PUBLIC METHODS
 		$xml .= '<comment>';
 		$xml .= '</comment>';
 
-		$content = file_get_contents($xml);
-		$new_obj = new NBXML($content, 0, FALSE);
+//		$content = file_get_contents($xml);
+		$new_obj = new NBXML($xml, 0, FALSE);
 
 		// Time - UTC=0
 		$time_unix = Date::unixstamp();
